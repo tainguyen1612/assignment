@@ -51,6 +51,7 @@
 
 	function delete_category_by_id($categoryid){
 		$db = getDB();// Connect to database
+		$id=isset($_GET['categoryid']) ? $_GET['categoryid'] : die('LỖI: Không tìm thấy ID.');
 		$query ="DELETE  FROM categoties 
 				WHERE categoryid=?";
 		try {
