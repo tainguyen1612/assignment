@@ -17,7 +17,7 @@
 	function add_category($categoryname, $description, $by_user){
 		$db = getDB();// Connect to database
 		$query ="INSERT INTO categoties(categoryname, description, by_user)
-				VALUES (categoryname=?,description=?,by_user=?)";
+				VALUES (?,?,?)";
 		try {
 			$statement = $db->prepare($query);
 			$statement->bindParam(1,$categoryname);
