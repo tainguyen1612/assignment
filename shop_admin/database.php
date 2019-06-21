@@ -1,15 +1,21 @@
 <?php
 	function getDB()
 	{
-		$dsn = "pgsql:host=localhost;port=5432;dbname=asm";
-		$username = 'postgres';
-		$password = '123456';
-		try{
-			$db = new PDO($dsn, $username, $password);
-			return $db;
-		} catch (PDOException $e) {
-			$error_message = $e->getMessage();
-			echo "Eroor connecting to database".$error_message;
+		if (empty(getenv("DATABASE_URL"))){
+			echo '<p>The DB does not exist</p>';
+			$pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
+		}  else {
+			 
+		   $db = parse_url(getenv("DATABASE_URL"));
+		   $pdo = new PDO("pgsql:" . sprintf(
+				 "ec2-54-221-243-211.compute-1.amazonaws.com;port=5432;user=docokbxiffiwzw;password=5a923307b82e04e852bb40397b2335a069f3ec647faaebd08ce96877b001baf8;dbname=
+				 d6jmv4urb51qs8",
+				$db["host"],
+				$db["port"],
+				$db["user"],
+				$db["pass"],
+				ltrim($db["path"], "/")
+		   ));
 		}
 	}
 ?>
