@@ -17,14 +17,6 @@
         case 'list_category':
             include_once('list_category.php');
             break;
-        case 'check_login_system':
-            $username = filter_input(INPUT_POST, 'username');
-            $password = filter_input(INPUT_POST, 'password');
-            if(check_user($username,$password))
-            {
-                include_once('list_category.php');
-            }   
-            break;
         case 'add_new_category':
             include_once('add_category.php');
             break;
