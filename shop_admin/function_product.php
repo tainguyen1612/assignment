@@ -1,52 +1,7 @@
 <?php 
 	function get_product(){
 		$db = getDB();
-		$query = "SELECT * FROM product WHERE categoryid=1 ORDER BY productid";
-		try{
-			$statement = $db->prepare($query);
-			$statement->execute();
-			$result = $statement->fetchAll();
-			$statement->closeCursor();
-			return $result;
-		}
-		catch (PDOExeception $e) {
-			$error_message = $e->getMessage();
-			echo "Error execute query statement:".$error_message;
-		}
-	}
-	function get_product2(){
-		$db = getDB();
-		$query = "SELECT * FROM product WHERE categoryid=2 ORDER BY productid";
-		try{
-			$statement = $db->prepare($query);
-			$statement->execute();
-			$result = $statement->fetchAll();
-			$statement->closeCursor();
-			return $result;
-		}
-		catch (PDOExeception $e) {
-			$error_message = $e->getMessage();
-			echo "Error execute query statement:".$error_message;
-		}
-	}
-	function get_product3(){
-		$db = getDB();
-		$query = "SELECT * FROM product WHERE categoryid=4 ORDER BY productid";
-		try{
-			$statement = $db->prepare($query);
-			$statement->execute();
-			$result = $statement->fetchAll();
-			$statement->closeCursor();
-			return $result;
-		}
-		catch (PDOExeception $e) {
-			$error_message = $e->getMessage();
-			echo "Error execute query statement:".$error_message;
-		}
-	}
-	function get_product4(){
-		$db = getDB();
-		$query = "SELECT * FROM product WHERE categoryid=5 ORDER BY productid";
+		$query = "SELECT * FROM product ORDER BY productid";
 		try{
 			$statement = $db->prepare($query);
 			$statement->execute();
