@@ -16,8 +16,8 @@
 	}
 	function add_category($categoryname, $description, $by_user){
 		$db = getDB();// Connect to database
-		$query ="INSERT INTO categoties(categoryname, description, by_user)
-				VALUES (?,?,?)";
+		$query ="INSERT INTO categoties (categoryname, description, by_user)
+				VALUES ('?','?','?')";
 		try {
 			$statement = $db->prepare($query);
 			$statement->bindParam(1,$categoryname);
@@ -51,7 +51,6 @@
 
 	function delete_category_by_id($categoryid){
 		$db = getDB();// Connect to database
-		$id=isset($_GET['categoryid']) ? $_GET['categoryid'] : die('LỖI: Không tìm thấy ID.');
 		$query ="DELETE  FROM categoties 
 				WHERE categoryid=?";
 		try {

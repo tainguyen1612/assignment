@@ -1,7 +1,6 @@
 <?php
     include_once('database.php');
     include_once('function_category.php');
-    include_once('function_product.php');
     $action = filter_input(INPUT_POST,'action');
     if(empty($action))
     {
