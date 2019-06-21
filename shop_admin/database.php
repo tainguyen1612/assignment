@@ -1,12 +1,15 @@
 <?php
 	function getDB()
 	{
-		$DBH = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);
-		$db = new PDO("pgsql:host='ec2-54-221-243-211.compute-1.amazonaws.com';dbname='asm'", "docokbxiffiwzw", "5a923307b82e04e852bb40397b2335a069f3ec647faaebd08ce96877b001baf8");
-		try {
-			$db = new PDO("pgsql:host='ec2-54-221-243-211.compute-1.amazonaws.com';dbname='asm'", "docokbxiffiwzw", "5a923307b82e04e852bb40397b2335a069f3ec647faaebd08ce96877b001baf8");
+		$dsn = "pgsql:host=localhost;port=5432;dbname=asm";
+		$username = 'postgres';
+		$password = '123456';
+		try{
+			$db = new PDO($dsn, $username, $password);
+			return $db;
 		} catch (PDOException $e) {
-			echo $e->getMessage();
+			$error_message = $e->getMessage();
+			echo "Eroor connecting to database".$error_message;
 		}
 	}
 ?>
