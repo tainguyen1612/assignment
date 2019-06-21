@@ -6,7 +6,6 @@
 		$username = 'docokbxiffiwzw';
 		$password = '5a923307b82e04e852bb40397b2335a069f3ec647faaebd08ce96877b001baf8';
 
-
 		try{
 			$db = new PDO($dsn, $username, $password);
 			return $db;

@@ -1,7 +1,6 @@
 <?php
     include_once('database.php');
     include_once('function_category.php');
-    include_once('function_user.php');
     include_once('function_product.php');
     $action = filter_input(INPUT_POST,'action');
     if(empty($action))
@@ -9,15 +8,12 @@
         $action = filter_input(INPUT_GET,'action');
         if(empty($action))
         {
-            $action = 'login_system';
+            $action = 'list_category';
         }
     }
 
     switch($action)
     {
-        case 'login_system':
-            include_once('login.php');
-            break;
         case 'list_category':
             include_once('list_category.php');
             break;
