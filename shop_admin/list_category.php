@@ -82,7 +82,7 @@
         <li><a href="#">Add New</a></li>
         <li><a href="#">Search</a></li>
         <li><a href="#">Edit</a></li>
-      </ul>
+      </ul>        
     </li>
     <li class="content"> <span>Monthly Bandwidth Transfer</span>
       <div class="progress progress-mini progress-danger active progress-striped">
