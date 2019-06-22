@@ -17,11 +17,19 @@
 	function add_category($categoryname, $description, $by_user){
 		$db = getDB();// Connect to database
 		$query ="INSERT INTO categoties (categoryname, description, by_user)
-				VALUES ('$_POST[categoryname]','$_POST[description]','$_POST[by_user]')";
-		$statement = $db->prepare($query);
+				VALUES (?,?,?)";
+		try {
+			$statement = $db->prepare($query);
+			$statement->bindParam(1,$categoryname);
+			$statement->bindParam(2,$description);
+			$statement->bindParam(3,$by_user);
+			$statement->execute();
+			$statement->closeCursor();			
+		} catch (PDOException $e) {
+			$error_message = $e->getMessage();
+			echo "Error execute query statement:".$error_message; 
+		}
 	}
-
-
 
 	function get_category_by_id($categoryid){
 		$db = getDB();// Connect to database
@@ -54,9 +62,8 @@
 			$error_message = $e->getMessage();
 			echo "Error execute query statement:".$error_message; 
 		}
-		
 	}
-	
+
 	function update_category($categoryid,$categoryname,$description,$by_user){
 		$db = getDB();// Connect to database
 		$query ="UPDATE categoties
