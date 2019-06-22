@@ -123,7 +123,6 @@
                   <th>Description</th>
                   <th>Create_at</th>
                   <th>Update_at</th>
-                  <th>By_user</th>
                   <th colspan="2">Action</th>
                 </tr>
               </thead>
