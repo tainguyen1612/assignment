@@ -54,14 +54,12 @@
 		$query ="DELETE  FROM categoties 
 				WHERE categoryid=?";
 		try {
-			$statement = $db->prepare($query);
-			$statement->bindParam(1,$categoryid);
-			$statement->execute();			
-			$statement->closeCursor();		
+			$db->exec($query);
 		} catch (PDOException $e) {
 			$error_message = $e->getMessage();
 			echo "Error execute query statement:".$error_message; 
 		}
+		$db = null;
 	}
 
 	function update_category($categoryid,$categoryname,$description,$by_user){
