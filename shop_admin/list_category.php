@@ -21,7 +21,7 @@
 
 <!--Header-part-->
 <div id="header">
-  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+  <h1><a href="dashboard.html">Toy Shop Admin</a></h1>
 </div>
 <!--close-Header-part--> 
 
@@ -64,11 +64,11 @@
 
 <div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-th"></i>Table</a>
   <ul>
-    <li><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li class="active"><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li><a href="#"><i class="icon icon-inbox"></i> <span>Category</span></a> </li>
-    <li class="active"><a href="#"><i class="icon icon-th"></i> <span>Product</span></a></li>
+    <li><a href="#"><i class="icon icon-th"></i> <span>Product</span></a></li>
     <li><a href="#"><i class="icon icon-inbox"></i> <span>Customer</span></a> </li>
-    <li class="active"><a href="#"><i class="icon icon-th"></i> <span>User</span></a></li>
+    <li><a href="#"><i class="icon icon-th"></i> <span>User</span></a></li>
 
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Product Operator</span> <span class="label label-important">3</span></a>
       <ul>
