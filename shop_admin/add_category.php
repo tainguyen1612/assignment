@@ -132,7 +132,7 @@
             </div>
             <div class="form-actions">
               <!-- <button name="action" value="save_new_category" type="submit" class="btn btn-success">Save</button> -->
-              <a href="?action=save_new_category" action><button type="submit" class="btn btn-success">Save</button></a> 
+              <a href="?action=save_new_category" name = "action"><button type="button" class="btn btn-success">Save</button></a>
             </div>
           </form>
         </div>
