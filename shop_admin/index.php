@@ -42,7 +42,6 @@
         case 'delete_category':
             $categoryid = filter_input(INPUT_GET, 'categoryid');
             delete_category_by_id($categoryid);
-            $category = get_categories();
             include_once('list_category.php');
             break;
     }
