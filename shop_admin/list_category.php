@@ -134,7 +134,6 @@
                   <td><?php echo $value['categoryname'] ?></td>
                   <td><?php echo $value['description'] ?></td>
                   <td class="center"><?php echo $value['create_at'] ?></td>
-                  <td class="center"><?php echo $value['update_at'] ?></td>
                   <td class="center"><?php echo $value['by_user'] ?></td>
                   <td class="center"><a href="?action=edit_category&categoryid=<?php echo $value['categoryid'];?>">Edit</a></td>
                   <td class="center"><a href="?action=delete_category&categoryid=<?php echo $value['categoryid'];?>">Delete</a></td>
