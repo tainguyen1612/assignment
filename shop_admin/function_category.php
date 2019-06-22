@@ -24,7 +24,7 @@
 			$statement->bindParam(':description',$description);
 			$statement->bindParam(':by_user',$by_user);
 			$statement->execute();
-			
+			$statement->closeCursor();			
 		} catch (PDOException $e) {
 			$error_message = $e->getMessage();
 			echo "Error execute query statement:".$error_message; 
@@ -40,7 +40,7 @@
 			$statement = $db->prepare($query);
 			$statement->bindParam(':categoryid',$categoryid);
 			$statement->execute();
-			$result = $statement->fetch();
+			$result = $statement->setFetchMode(PDO::FETCH_ASSOC);
 			$statement->closeCursor();
 			return $result;
 		} catch (PDOException $e) {
