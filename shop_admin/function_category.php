@@ -24,7 +24,7 @@
 			$statement->bindParam(':description',$description);
 			$statement->bindParam(':by_user',$by_user);
 			$statement->execute();
-			$statement->closeCursor();			
+			
 		} catch (PDOException $e) {
 			$error_message = $e->getMessage();
 			echo "Error execute query statement:".$error_message; 
