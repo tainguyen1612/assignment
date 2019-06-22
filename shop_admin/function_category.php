@@ -40,7 +40,7 @@
 			$statement = $db->prepare($query);
 			$statement->bindParam(':categoryid',$categoryid);
 			$statement->execute();
-			$result = $statement->setFetchMode(PDO::FETCH_ASSOC);
+			$result = $statement->fetch();
 			$statement->closeCursor();
 			return $result;
 		} catch (PDOException $e) {
