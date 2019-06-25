@@ -2,8 +2,9 @@
     function get_user()
     {
         $db = getDB();
-		$query = "SELECT * FROM user 
-        WHERE username=:username AND password=:password";
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+		$query = "SELECT * FROM user WHERE username = '$username' and password = '$password'";
 		try{
 			$statement = $db->prepare($query);
 			$statement->execute();
@@ -19,6 +20,7 @@
     function check_user($user_name , $password)
     {   
         //lay tat ca user
+
         $list_user = get_user();
         $found = false;
         foreach ($list_user as $key => $value) {
