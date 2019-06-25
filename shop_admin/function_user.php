@@ -7,7 +7,7 @@
         try {
             $statement = $db->prepare($query);
             $statement->bindParam(':username',$username);
-            $statement->bindParam(':passowrd',$passowrd);
+            $statement->bindParam(':password',$passowrd);
             $statement->execute();
             $result = $statement->fetch();
             $statement->closeCursor();
