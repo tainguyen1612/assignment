@@ -20,8 +20,7 @@
     function check_user($username , $password)
     {   
         //lay tat ca user
-        $user_id = filter_input(INPUT_GET, 'user_id');
-        $list_user = get_user($user_id);
+        $list_user = get_user();
         $found = false;
         foreach ($list_user as $key => $value) {
             if(($value['username']==$user_name)&&($value['password']==$password))
