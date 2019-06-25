@@ -21,6 +21,7 @@
         $password = filter_input(INPUT_POST, 'password');
         if(check_user($username,$password))
         {
+            if(($username == "admin") && ($password == "admin"))
             include_once('list_category.php');
         }   
         break;  

@@ -2,7 +2,7 @@
     function get_user()
     {
         $db = getDB();
-		$query = "SELECT * FROM user ORDER BY user_id";
+		$query = "SELECT * FROM user WHERE username = ':username' AND password = ':password'";
 		try{
 			$statement = $db->prepare($query);
 			$statement->execute();
