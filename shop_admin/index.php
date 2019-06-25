@@ -20,17 +20,10 @@
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
         if(check_user($username,$password))
-        {   
-            if(($username=="admin")&&($password=="admin"))
-            {
-                include_once('list_category.php');
-            }
-            if(($username=="shop1")&&($password=="shop1"))
-            {
-                include_once('adminPage.php');
-            }
-            return $found;
+        {
+            include_once('list_category.php');
         }   
+        break;  
         break;
         case 'list_category':
         include_once('list_category.php');
