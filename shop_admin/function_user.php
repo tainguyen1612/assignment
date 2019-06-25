@@ -1,13 +1,11 @@
 <?php
 
-    function get_user($username,$passowrd){
+    function get_user(){
         $db = getDB();// Connect to database
         $query ="SELECT * FROM user 
                 WHERE username=:username AND password=:password";
         try {
             $statement = $db->prepare($query);
-            $statement->bindParam(':username',$username);
-            $statement->bindParam(':password',$passowrd);
             $statement->execute();
             $result = $statement->fetch();
             $statement->closeCursor();
@@ -20,9 +18,7 @@
     function check_user($username , $password)
     {   
         //lay tat ca user
-        $user_name = filter_input(INPUT_GET, 'username');
-        $password = filter_input(INPUT_GET, 'password');
-        $list_user = get_user($user_name , $password);
+        $list_user = get_user();
         $found = false;
         foreach ($list_user as $key => $value) {
             if(($value['username']==$user_name)&&($value['password']==$password))
