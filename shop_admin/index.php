@@ -7,15 +7,34 @@
         $action = filter_input(INPUT_GET,'action');
         if(empty($action))
         {
-            $action = 'list_category';
+            $action = 'login_system';
         }
     }
 
     switch($action)
     {
-        case 'list_category':
-            include_once('list_category.php');
-            break;
+        case 'login_system':
+        include_once('login.php');
+        break;
+    case 'list_category':
+        include_once('list_category.php');
+        break;
+    case 'check_login_system':
+        $username = filter_input(INPUT_POST, 'username');
+        $password = filter_input(INPUT_POST, 'password');
+        if(check_user($username,$password))
+        {   
+            if(($username=="admin")&&($password=="admin"))
+            {
+                include_once('list_category.php');
+            }
+            if(($username=="shop1")&&($password=="shop1"))
+            {
+                include_once('adminPage.php');
+            }
+            
+        }   
+        break;
         case 'add_new_category':
             include_once('add_category.php');
             break;
