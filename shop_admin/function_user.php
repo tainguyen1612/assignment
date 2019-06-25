@@ -3,8 +3,7 @@
     {
         $db = getDB();
 		$query = "SELECT * FROM user 
-        WHERE username=:username AND password=:password
-        ORDER BY userid";
+        WHERE username=:username AND password=:password";
 		try{
 			$statement = $db->prepare($query);
 			$statement->execute();
