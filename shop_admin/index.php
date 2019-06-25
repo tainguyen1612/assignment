@@ -29,7 +29,7 @@
             {
                 include_once('adminPage.php');
             }
-            
+            return $found;
         }   
         break;
         case 'list_category':
