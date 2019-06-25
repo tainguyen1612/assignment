@@ -23,11 +23,11 @@
         {   
             if(($username=="admin")&&($password=="admin"))
             {
-                include('list_category.php');
+                include_once('list_category.php');
             }
             if(($username=="shop1")&&($password=="shop1"))
             {
-                include('adminPage.php');
+                include_once('adminPage.php');
             }
             
         }   
