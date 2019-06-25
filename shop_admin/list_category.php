@@ -16,13 +16,12 @@
 <link rel="stylesheet" href="css/matrix-style.css" />
 <link rel="stylesheet" href="css/matrix-media.css" />
 <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <!--Header-part-->
 <div id="header">
-  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+  <h1><a href="dashboard.html">Toy Shop Admin</a></h1>
 </div>
 <!--close-Header-part--> 
 
@@ -65,11 +64,11 @@
 
 <div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-th"></i>Table</a>
   <ul>
-    <li><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li class="active"><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li><a href="#"><i class="icon icon-inbox"></i> <span>Category</span></a> </li>
-    <li class="active"><a href="#"><i class="icon icon-th"></i> <span>Product</span></a></li>
+    <li><a href="#"><i class="icon icon-th"></i> <span>Product</span></a></li>
     <li><a href="#"><i class="icon icon-inbox"></i> <span>Customer</span></a> </li>
-    <li class="active"><a href="#"><i class="icon icon-th"></i> <span>User</span></a></li>
+    <li><a href="#"><i class="icon icon-th"></i> <span>User</span></a></li>
 
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Product Operator</span> <span class="label label-important">3</span></a>
       <ul>
@@ -83,7 +82,7 @@
         <li><a href="#">Add New</a></li>
         <li><a href="#">Search</a></li>
         <li><a href="#">Edit</a></li>
-      </ul>
+      </ul>        
     </li>
     <li class="content"> <span>Monthly Bandwidth Transfer</span>
       <div class="progress progress-mini progress-danger active progress-striped">
@@ -124,7 +123,6 @@
                   <th>Description</th>
                   <th>Create_at</th>
                   <th>Update_at</th>
-                  <th>By_user</th>
                   <th colspan="2">Action</th>
                 </tr>
               </thead>
@@ -135,7 +133,6 @@
                   <td><?php echo $value['categoryname'] ?></td>
                   <td><?php echo $value['description'] ?></td>
                   <td class="center"><?php echo $value['create_at'] ?></td>
-                  <td class="center"><?php echo $value['update_at'] ?></td>
                   <td class="center"><?php echo $value['by_user'] ?></td>
                   <td class="center"><a href="?action=edit_category&categoryid=<?php echo $value['categoryid'];?>">Edit</a></td>
                   <td class="center"><a href="?action=delete_category&categoryid=<?php echo $value['categoryid'];?>">Delete</a></td>
