@@ -2,7 +2,7 @@
     function get_user()
     {
         $db = getDB();
-		$query = "SELECT * FROM user WHERE username = ':username' AND password = ':password'";
+		$query = "SELECT * FROM user ORDER BY user_id";;
 		try{
 			$statement = $db->prepare($query);
 			$statement->execute();
@@ -15,7 +15,7 @@
 			echo "Error execute query statement:".$error_message;
 		}
     }
-    function check_user($user_name , $password)
+    function check_user($username , $password)
     {   
         //lay tat ca user
         $list_user = get_user();
