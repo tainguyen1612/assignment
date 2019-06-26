@@ -7,16 +7,57 @@
         $action = filter_input(INPUT_GET,'action');
         if(empty($action))
         {
-            $action = 'list_category';
+            $action = 'login_system';
         }
     }
 
     switch($action)
     {
-
+        case 'login_system':
+            include_once('login.php');
+            break;
         case 'list_category':
         include_once('list_category.php');
         break;
+        case 'check_login_system':
+            if(isset($_POST['action']))
+                {
+                    $u=$p="";
+                    if($_POST['username'] == NULL)
+                        {
+                            echo "Please enter your username<br />";
+                        }
+                    else
+                        {
+                            $u=$_POST['username'];
+                        }
+                    if($_POST['password'] == NULL)
+                        {
+                        echo "Please enter your password<br />";
+                        }
+                    else
+                        {
+                            $p=$_POST['password'];
+                        }
+                    if($u && $p)
+                        {
+                            $conn= getDB();
+                            $sql="SELECT * from user where username='".$u."' and password='".$p."'";
+                            $query=pg_query($sql);
+                            if(pg_num_rows($query) == 0)
+                                {
+                                    if($u=='admin' && $p=='admin')
+                                        {
+                                            include_once('list_category.php');
+                                        }
+                                    if($u=='admin1' && $p=='admin1')
+                                        {
+                                            include_once('adminPage.php');
+                                        }
+                                }
+                        }
+                }   
+            break;
         case 'add_new_category':
             include_once('add_category.php');
             break;
